@@ -1,0 +1,41 @@
+#!/bin/bash
+
+help() {
+  echo "Usage:"
+  echo "  zmicro goreleaser <args ...>"
+  echo ""
+
+  goreleaser --help
+}
+
+version() {
+  goreleaser --version
+}
+
+core() {
+  # context directory
+  local context="$ZMICRO_PACKAGES_DATA_PATH/goreleaser"
+  if [ ! -d "$context" ]; then
+    mkdir -p $context
+  fi
+  cd $context
+  # context directory
+
+  case $1 in
+  -h | --help | help)
+    help
+    ;;
+  -v | --version | version)
+    version
+    ;;
+  *)
+    goreleaser "$@"
+    ;;
+  esac
+}
+
+run() {
+  core "$@"
+}
+
+run "$@"
