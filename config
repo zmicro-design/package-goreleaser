@@ -2,5 +2,5 @@
 
 export PACKAGE_CORE_NAME="goreleaser"
 export PACKAGE_CORE_BIN_NAME="$PACKAGE_CORE_NAME"
-export PACKAGE_CORE_VERSION=v1.20.0
+export PACKAGE_CORE_VERSION=v2.3.2
 export PACKAGE_CORE_RELEASE_DOWNLOAD="https://github.com/goreleaser/goreleaser/releases/download"
